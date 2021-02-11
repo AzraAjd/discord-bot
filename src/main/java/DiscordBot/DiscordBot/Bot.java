@@ -38,6 +38,8 @@ public class Bot extends ListenerAdapter{
 	
 	public static Integer balance;
 	
+	private static Trivia trivia = new Trivia();
+	
 	public static void main(String[] args) throws LoginException, InterruptedException, IOException, SQLException{
 		
 		Scanner file = new Scanner(new File("weeb.txt")).useDelimiter(",");
@@ -102,13 +104,18 @@ public class Bot extends ListenerAdapter{
 			
 			
 			//if users engages with bot by starting the message with keyword 'dummy', check the message for further bot's reponse
-			if (messageString.toLowerCase().startsWith("dummy "))
+			if (messageString.toLowerCase().startsWith("dum "))
 			{
 				try {
 					checkRequest(user_tag, messageString, channel, userMention);
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
+			}
+			 
+			else if (trivia.IsPending(user_tag) ) {
+				String response = trivia.AnswerQuestion(user_tag, messageString.toLowerCase()); 
+				channel.sendMessage(userMention + " " + response).queue();
 			}
 			else return;
 		}	
@@ -129,9 +136,14 @@ public class Bot extends ListenerAdapter{
 			case "dummy show moni":
 				showBalance(user_tag, channel, userMention);
 				break;
-			default:
+			case "dum quiz":
+				String question = trivia.GetQuestion(user_tag);
+				channel.sendMessage(question).queue();
 				break;
-		}
+			default:     
+				break;
+		} 
+		  
 		
 	}
 	

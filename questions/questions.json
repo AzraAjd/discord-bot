@@ -1,0 +1,611 @@
+ [
+    {
+      "Question": "Acronym: What instance does DM (Eastern Kingdom) refer to?",
+      "Answers": ["The Deadmines", "Deadmines"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does SFK refer to?",
+      "Answers": ["Shadowfang Keep"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does STK refer to?",
+      "Answers": [
+        "The Stormwind Stockade",
+        "Stormwind Stockade",
+        "The Stockade",
+        "Stockade"
+      ],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does GR refer to?",
+      "Answers": ["Gnomeregan"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does SM refer to?",
+      "Answers": ["The Scarlet Monastery", "Scarlet Monastery"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does Uld refer to?",
+      "Answers": ["Uldaman"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does ST refer to?",
+      "Answers": [
+        "The Temple of Atal'Hakkar",
+        "Temple of Atal'Hakkar",
+        "Sunken Temple"
+      ],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does BRD refer to?",
+      "Answers": ["The Blackrock Depths", "Blackrock Depths"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does LBRS refer to?",
+      "Answers": ["Lower Blackrock Spire"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does UBRS refer to?",
+      "Answers": ["Upper Blackrock Spire"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does BRS refer to?",
+      "Answers": ["Blackrock Spire"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does Strat refer to?",
+      "Answers": ["Stratholme"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does Scholo refer to?",
+      "Answers": ["The Scholomance", "Scholomance"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does ZG refer to?",
+      "Answers": ["Zul'Gurub"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does MC refer to?",
+      "Answers": ["The Molten Core", "Molten Core"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does BWL refer to?",
+      "Answers": ["The Blackwing Lair", "Blackwing Lair"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does Naxx refer to?",
+      "Answers": ["Naxxramas"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does KZ refer to?",
+      "Answers": ["Karazhan"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does ZA refer to?",
+      "Answers": ["Zul'Aman"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does MgT refer to?",
+      "Answers": [
+        "The Magisters' Terrace",
+        "Magisters' Terrace",
+        "The Magisters Terrace",
+        "Magisters Terrace"
+      ],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does SWP refer to?",
+      "Answers": ["The Sunwell Plateau", "Sunwell Plateau"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does RFC refer to?",
+      "Answers": ["Ragefire Chasm"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does WC refer to?",
+      "Answers": ["The Wailing Caverns", "Wailing Caverns"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does BFD refer to?",
+      "Answers": ["The Blackfathom Deeps", "Blackfathom Deeps"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does RFK refer to?",
+      "Answers": ["Razorfen Kraul"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does RFD refer to?",
+      "Answers": ["Razorfen Downs"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does ZF refer to?",
+      "Answers": ["Zul'Farrak"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does Mara refer to?",
+      "Answers": ["Maraudon"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does DM (Kalimdor) refer to?",
+      "Answers": ["Dire Maul"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does Ony refer to?",
+      "Answers": ["Onyxia's Lair", "Onyxia"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does AQ20 refer to?",
+      "Answers": ["The Ruins of Ahn'Qiraj", "Ruins of Ahn'Qiraj"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does AQ40 refer to?",
+      "Answers": ["The Temple of Ahn'Qiraj", "Temple of Ahn'Qiraj"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does CoT: OHF refer to?",
+      "Answers": [
+        "Old Hillsbrad Foothills",
+        "Caverns of Time: Old Hillsbrad Foothills",
+        "Escape from Durnholde Keep"
+      ],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does CoT: BM refer to?",
+      "Answers": [
+        "Black Morass",
+        "Caverns of Time: Black Morass",
+        "Opening the Dark Portal"
+      ],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does MH refer to?",
+      "Answers": ["Hyjal Summit", "Battle to Mount Hyjal", "Mount Hyjal"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does CoT: Strat refer to?",
+      "Answers": [
+        "Old Stratholme",
+        "Caverns of Time: Old Stratholme",
+        "Culling of Stratholme"
+      ],
+      "Category": 3,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What zone does HFC refer to?",
+      "Answers": ["Hellfire Citadel"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does HFR refer to?",
+      "Answers": ["The Hellfire Ramparts", "Hellfire Ramparts", "Ramparts"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does BF refer to?",
+      "Answers": ["The Blood Furnace", "Blood Furnace"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does SP refer to?",
+      "Answers": ["The Slave Pens", "Slave Pens"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does UB refer to?",
+      "Answers": ["The Underbog", "Underbog"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does MT refer to?",
+      "Answers": ["The Mana Tombs", "Mana Tombs"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does AC refer to?",
+      "Answers": ["The Auchenai Crypts", "Auchenai Crypts"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does Seth refer to?",
+      "Answers": ["The Sethekk Halls", "Sethekk Halls"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does SV refer to?",
+      "Answers": ["The Steamvault", "Steamvault", "Steam Vaults"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does SL refer to?",
+      "Answers": ["The Shadow Labyrinth", "Shadow Labyrinth", "Shadow Lab"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does Mech refer to?",
+      "Answers": ["The Mechanar", "Mechanar"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does Bot refer to?",
+      "Answers": ["The Botanica", "Botanica"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does Arc refer to?",
+      "Answers": ["The Arcatraz", "Arcatraz"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does SH refer to?",
+      "Answers": ["The Shattered Halls", "Shattered Halls"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does Gruul refer to?",
+      "Answers": ["Gruul's Lair", "Gruul the Dragonkiller"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does Mag refer to?",
+      "Answers": ["Magtheridon's Lair", "Magtheridon"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does SSC refer to?",
+      "Answers": ["Serpentshrine Cavern"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does TK refer to?",
+      "Answers": ["The Eye", "Tempest Keep"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does BT refer to?",
+      "Answers": ["The Black Temple", "Black Temple"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does UK refer to?",
+      "Answers": ["Utgarde Keep"],
+      "Category": 3,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does Nex refer to?",
+      "Answers": ["The Nexus", "Nexus"],
+      "Category": 3,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does AN refer to?",
+      "Answers": ["Azjol-Nerub", "Nerub"],
+      "Category": 3,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does DTK refer to?",
+      "Answers": ["Drak'Tharon Keep"],
+      "Category": 3,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does HoS refer to?",
+      "Answers": ["The Halls of Stone", "Halls of Stone"],
+      "Category": 3,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does UP refer to?",
+      "Answers": ["Utgarde Pinnacle"],
+      "Category": 3,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does Ocu refer to?",
+      "Answers": ["The Oculus", "Oculus"],
+      "Category": 3,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does HoL refer to?",
+      "Answers": ["The Halls of Lightning", "Halls of Lightning"],
+      "Category": 3,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does EoE refer to?",
+      "Answers": ["The Eye of Eternity", "Eye of Eternity"],
+      "Category": 3,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does ICC refer to?",
+      "Answers": ["The Icecrown Citadel", "Icecrown Citadel"],
+      "Category": 3,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does CoA refer to?",
+      "Answers": ["The Chamber of Aspects", "Chamber of Aspects"],
+      "Category": 3,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does Gun refer to?",
+      "Answers": ["Gun'Drak", "Gundrak"],
+      "Category": 3,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does VH refer to?",
+      "Answers": ["The Violet Hold", "Violet Hold"],
+      "Category": 3,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does AB refer to?",
+      "Answers": ["Arathi Basin"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does AV refer to?",
+      "Answers": ["Alterac Valley"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does EotS refer to?",
+      "Answers": ["Eye of the Storm"],
+      "Category": 2,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What instance does WSG refer to?",
+      "Answers": ["Warsong Gulch"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    },
+
+    {
+      "Question": "Acronym: What zone does CoT refer to?",
+      "Answers": ["Caverns of Time"],
+      "Category": 1,
+      "Points": 5,
+      "Hints": ""
+    }
+  ]
