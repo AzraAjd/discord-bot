@@ -1,17 +1,27 @@
 package DiscordBot.DiscordBot;
 
-public class Question { 
-	private String Question;
-	private String Points;
-	private String Hints;
-	private String[] Answers;
+import com.google.gson.annotations.SerializedName;
+
+public class Question {        
 	
-	public String GetQuestion() {
-		return Question;
+	@SerializedName(value = "Question")
+	private String question;
+	
+	@SerializedName(value = "Points")
+	private String points;
+	
+	@SerializedName(value = "Hints")
+	private String hints;
+	
+	@SerializedName(value = "Answers")
+	private String[] answers;
+	
+	public String getQuestion() {
+		return question;
 	}
 	
-	public String[] GetAnswers() {
-		return Answers;
+	public String[] getAnswers() {
+		return answers;
 	}
 }
  
