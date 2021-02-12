@@ -11,8 +11,10 @@ import java.util.stream.Collectors;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
+import net.dv8tion.jda.api.entities.MessageChannel;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class Trivia {
+public class Quiz implements IFunService {
     private static Random rand = new Random();
  
 	private final String QUESTIONS_FOLDER = "questions";
@@ -20,7 +22,7 @@ public class Trivia {
 	private List<Question> questions;
 	private HashMap<String, Question> users = new HashMap<String, Question>();
 	
-	public Trivia() {
+	public Quiz() {
 		LoadQuestions();
 	} 
 	
@@ -51,8 +53,8 @@ public class Trivia {
 	}
 	
 	public boolean IsPending(String userID) {
-		return users.containsKey(userID);
-	}
+		return users.containsKey(userID); 
+	} 
 	
 	public String AnswerQuestion(String userID, String answer) { 
 		if (!users.containsKey(userID))
@@ -70,5 +72,17 @@ public class Trivia {
 
 		users.remove(userID);
 		return "The correct answer is " + question.GetAnswers()[0];
+	}
+
+	@Override
+	public void HandleMessage(String userTag, String message, MessageChannel channel, String userMention, MessageReceivedEvent event) {
+		if (message.toLowerCase() == "dum quiz") {
+			String question = GetQuestion(userTag);
+			channel.sendMessage(userMention + " " + question).queue();
+		} 
+		else if (IsPending(userTag) ) {
+			String response = AnswerQuestion(userTag, message.toLowerCase()); 
+			channel.sendMessage(userMention + " " + response).queue();
+		}
 	}
 } 

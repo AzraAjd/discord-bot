@@ -36,11 +36,14 @@ public class Bot extends ListenerAdapter{
 	public static Statement statement;
 	public static Connection connection;
 	
-	public static Integer balance;
+	public static Integer balance; 
 	
-	private static Trivia trivia = new Trivia();
+	private static ArrayList<IFunService> funServices = new ArrayList<IFunService>();
+	// private static Trivia trivia = new Trivia();       
 	
 	public static void main(String[] args) throws LoginException, InterruptedException, IOException, SQLException{
+		
+		funServices.add(new Quiz());
 		
 		Scanner file = new Scanner(new File("weeb.txt")).useDelimiter(",");
 		fileWordsArray = readFileIntoArray(file);
@@ -97,7 +100,11 @@ public class Bot extends ListenerAdapter{
 			String user_tag = event.getAuthor().getAsTag();
 			String userMention = event.getAuthor().getAsMention();
 			
-			MessageChannel channel = event.getChannel();
+			MessageChannel channel = event.getChannel(); 
+			
+			for (IFunService fun : funServices) {
+				fun.HandleMessage(user_tag, messageString, channel, userMention, event);
+			}
 			
 			if (checkMessageForKeywords(messageString) && !event.getAuthor().isBot())
 				channel.sendMessage(userMention + " Stop being a weeb").queue();
@@ -111,11 +118,6 @@ public class Bot extends ListenerAdapter{
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
-			}
-			 
-			else if (trivia.IsPending(user_tag) ) {
-				String response = trivia.AnswerQuestion(user_tag, messageString.toLowerCase()); 
-				channel.sendMessage(userMention + " " + response).queue();
 			}
 			else return;
 		}	
@@ -135,11 +137,7 @@ public class Bot extends ListenerAdapter{
 				break;
 			case "dummy show moni":
 				showBalance(user_tag, channel, userMention);
-				break;
-			case "dum quiz":
-				String question = trivia.GetQuestion(user_tag);
-				channel.sendMessage(question).queue();
-				break;
+				break; 
 			default:     
 				break;
 		} 
