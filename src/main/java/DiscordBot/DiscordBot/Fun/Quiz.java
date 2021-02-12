@@ -1,16 +1,18 @@
-package DiscordBot.DiscordBot;
+package DiscordBot.DiscordBot.Fun;
 
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
+import DiscordBot.DiscordBot.IFunService;
+import DiscordBot.DiscordBot.Question;
 import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
@@ -49,7 +51,7 @@ public class Quiz implements IFunService {
 		Question question = questions.get(rand.nextInt(questions.size()));
 		users.put(userID, question);
 		
-		return question.GetQuestion();
+		return question.getQuestion();
 	}
 	
 	public boolean IsPending(String userID) {
@@ -61,7 +63,7 @@ public class Quiz implements IFunService {
 			return "";    
 		
 		Question question = users.get(userID);
-		if (Arrays.asList(question.GetAnswers()).stream()
+		if (Arrays.asList(question.getAnswers()).stream()
 				.map(s -> s.toLowerCase())
 				.collect(Collectors.toList())
 				.contains(answer)) {      
@@ -71,7 +73,7 @@ public class Quiz implements IFunService {
 		}
 
 		users.remove(userID);
-		return "The correct answer is " + question.GetAnswers()[0];
+		return "The correct answer is " + question.getAnswers()[0];
 	}
 
 	@Override
