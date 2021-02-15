@@ -31,7 +31,7 @@ public class Quiz implements IFunService {
 	private boolean LoadQuestions() {
 		JsonReader reader;
 		try {
-			reader = new JsonReader(new FileReader(QUESTIONS_FOLDER + "\\questions.json"));
+			reader = new JsonReader(new FileReader(QUESTIONS_FOLDER + "\\questions1.json"));
 		} catch (FileNotFoundException e) { 
 			System.out.println(e.getMessage());
 			return false;
@@ -66,7 +66,7 @@ public class Quiz implements IFunService {
 		if (Arrays.asList(question.getAnswers()).stream()
 				.map(s -> s.toLowerCase())
 				.collect(Collectors.toList())
-				.contains(answer)) {      
+				.contains(answer.toLowerCase())) {      
 			
 			users.remove(userID);
 			return "Correct";
@@ -78,12 +78,12 @@ public class Quiz implements IFunService {
 
 	@Override
 	public void HandleMessage(String userTag, String message, MessageChannel channel, String userMention, MessageReceivedEvent event) {
-		if (message.toLowerCase() == "dum quiz") {
+		if (message.toLowerCase().equals("dum quiz")) {
 			String question = GetQuestion(userTag);
 			channel.sendMessage(userMention + " " + question).queue();
 		} 
 		else if (IsPending(userTag) ) {
-			String response = AnswerQuestion(userTag, message.toLowerCase()); 
+			String response = AnswerQuestion(userTag, message); 
 			channel.sendMessage(userMention + " " + response).queue();
 		}
 	}
