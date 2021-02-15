@@ -1,5 +1,6 @@
 package DiscordBot.DiscordBot.Fun;
 
+import java.awt.Color;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Arrays;
@@ -13,7 +14,10 @@ import com.google.gson.stream.JsonReader;
 
 import DiscordBot.DiscordBot.IFunService;
 import DiscordBot.DiscordBot.Question;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.EmbedType;
 import net.dv8tion.jda.api.entities.MessageChannel;
+import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class Quiz implements IFunService {
@@ -44,14 +48,14 @@ public class Quiz implements IFunService {
 		return true;
 	}
 	
-	public String GetQuestion(String userID) {
+	public Question GetQuestion(String userID) {
 		if (questions.isEmpty())
-			return "There are no questions";
+			return null;
 			
 		Question question = questions.get(rand.nextInt(questions.size()));
 		users.put(userID, question);
 		
-		return question.getQuestion();
+		return question;
 	}
 	
 	public boolean IsPending(String userID) {
@@ -79,8 +83,19 @@ public class Quiz implements IFunService {
 	@Override
 	public void HandleMessage(String userTag, String message, MessageChannel channel, String userMention, MessageReceivedEvent event) {
 		if (message.toLowerCase().equals("dum quiz")) {
-			String question = GetQuestion(userTag);
-			channel.sendMessage(userMention + " " + question).queue();
+			Question question = GetQuestion(userTag);
+			Color color = new Color(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
+
+			MessageEmbed embedded = new EmbedBuilder()
+				.setAuthor(event.getAuthor().getName() + "'s quiz question", null, event.getAuthor().getAvatarUrl())
+				.setColor(color)
+				.setDescription(question.getQuestion())
+				.addField("Category", "World of Warcraft", true)
+				.addField("Points", question.getPoints(), true)
+				.setFooter("You have all the time to answer.")
+				.build();
+			
+			channel.sendMessage(embedded).queue();
 		} 
 		else if (IsPending(userTag) ) {
 			String response = AnswerQuestion(userTag, message); 

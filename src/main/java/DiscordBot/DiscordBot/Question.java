@@ -22,6 +22,11 @@ public class Question {
 	
 	public String[] getAnswers() {
 		return answers;
+	} 
+	
+	public String getPoints() {
+		return points;
 	}
+	
 }
  
