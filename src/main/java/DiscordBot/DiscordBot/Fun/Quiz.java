@@ -23,7 +23,19 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 public class Quiz implements IFunService {
     private static Random rand = new Random();
  
-	private final String QUESTIONS_FOLDER = "questions";
+	private final String QUESTIONS_FOLDER = "questions"; 
+	private String[] correctMessages = new String[] {
+			"That's correct! Good job.",
+			"Nice, that's right.", 
+			"Your answer is correct.",
+			"You're good. That's the right answer."
+	};
+	
+	private String[] incorrectMessages = new String[] {
+			"The correct answer is ",
+	       "That's wrong, the correct one is ",
+	       "You butt, the right one is "
+	};
 	
 	private List<Question> questions;
 	private HashMap<String, Question> users = new HashMap<String, Question>();
@@ -73,11 +85,11 @@ public class Quiz implements IFunService {
 				.contains(answer.toLowerCase())) {      
 			
 			users.remove(userID);
-			return "Correct";
-		}
+			return correctMessages[rand.nextInt(correctMessages.length)];
+		} 
 
 		users.remove(userID);
-		return "The correct answer is " + question.getAnswers()[0];
+		return incorrectMessages[rand.nextInt(incorrectMessages.length)] + question.getAnswers()[0];
 	}
 
 	@Override
