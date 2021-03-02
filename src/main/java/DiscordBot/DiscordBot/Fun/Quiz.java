@@ -47,7 +47,7 @@ public class Quiz implements IFunService {
 	private boolean LoadQuestions() {
 		JsonReader reader;
 		try {
-			reader = new JsonReader(new FileReader(QUESTIONS_FOLDER + "\\questions1.json"));
+			reader = new JsonReader(new FileReader(QUESTIONS_FOLDER + "/questions1.json"));
 		} catch (FileNotFoundException e) { 
 			System.out.println(e.getMessage());
 			return false;
