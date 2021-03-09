@@ -1,5 +1,5 @@
 # Dummy discord-bot  
-[![Build status](https://ci.appveyor.com/api/projects/status/uxopra04911orvj4?svg=true)]
+![Build status](https://ci.appveyor.com/api/projects/status/uxopra04911orvj4?svg=true)
 
 Dummy discord bot is ...
 
