@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
@@ -47,7 +48,8 @@ public class Quiz implements IFunService {
 	private boolean LoadQuestions() {
 		JsonReader reader;
 		try {
-			reader = new JsonReader(new FileReader(QUESTIONS_FOLDER + "/questions1.json"));
+			reader = new JsonReader(new FileReader(QUESTIONS_FOLDER + "/"
+					+ "questions1.json"));
 		} catch (FileNotFoundException e) { 
 			System.out.println(e.getMessage());
 			return false;
@@ -77,12 +79,12 @@ public class Quiz implements IFunService {
 	public String AnswerQuestion(String userID, String answer) { 
 		if (!users.containsKey(userID))
 			return "";    
-		
+
 		Question question = users.get(userID);
-		if (Arrays.asList(question.getAnswers()).stream()
-				.map(s -> s.toLowerCase())
-				.collect(Collectors.toList())
-				.contains(answer.toLowerCase())) {      
+		List<String> userWords = Arrays.asList(answer.split(" ")).stream().map(s -> s.toLowerCase()).collect(Collectors.toList());
+		List<String> answers = Arrays.asList(question.getAnswers()).stream().map(s -> s.toLowerCase()).collect(Collectors.toList());
+		
+		if (answers.stream().anyMatch(a -> userWords.stream().anyMatch(w -> w.equals(a)))) {      
 			
 			users.remove(userID);
 			return correctMessages[rand.nextInt(correctMessages.length)];
