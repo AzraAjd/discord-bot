@@ -95,9 +95,9 @@ public class Quiz implements IFunService {
 		
 		List<String> answers = Arrays.asList(question.getAnswers()).stream().map(s -> s.toLowerCase()).collect(Collectors.toList());
 		
-		if (answers.stream().allMatch(a -> userWords.stream().anyMatch(w -> w.equals(a)))) {      
+		if (answers.stream().anyMatch(a -> Arrays.equals(a.split(" "), userWords.toArray()))) {      
 			
-			users.remove(userID);
+			users.remove(userID); 
 			return correctMessages[rand.nextInt(correctMessages.length)];
 		} 
 
