@@ -88,15 +88,14 @@ public class Quiz implements IFunService {
 			return "";    
 
 		Question question = users.get(userID);
-		String[] userWords = (String[]) Arrays.asList(answer.split(" ")).stream()
+		List<String> userWords = (String[]) Arrays.asList(answer.split(" ")).stream()
 				.map(s -> s.toLowerCase())
 				.filter(w -> !whitelistedWords.contains(w))
 				.collect(Collectors.toList())
-				.toArray();
 		
 		List<String> answers = Arrays.asList(question.getAnswers()).stream().map(s -> s.toLowerCase()).collect(Collectors.toList());
 		
-		if (answers.stream().anyMatch(a -> Arrays.equals(a.split(" "), userWords))) {      
+		if (answers.stream().anyMatch(a -> Arrays.equals(a.split(" "), userWords.toArray()))) {      
 			
 			users.remove(userID); 
 			return correctMessages[rand.nextInt(correctMessages.length)];
