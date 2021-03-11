@@ -128,6 +128,7 @@ public class Quiz implements IFunService {
 			SendQuestion(question, channel, event);
 		} 
 		else if (message.toLowerCase().equals("dum quiz last")) {
+			users.put(userTag, lastQuestion);
 			SendQuestion(lastQuestion, channel, event);
 		}
 		else if (IsPending(userTag) ) {
