@@ -42,6 +42,8 @@ public class Quiz implements IFunService {
 	private ArrayList<String> whitelistedWords = new ArrayList<String>(
 		Arrays.asList("fucking", "butt")
 	); 
+	
+	private Question lastQuestion;
 	 
 	private List<Question> questions;
 	private HashMap<String, Question> users = new HashMap<String, Question>();
@@ -102,24 +104,32 @@ public class Quiz implements IFunService {
 		users.remove(userID);
 		return incorrectMessages[rand.nextInt(incorrectMessages.length)] + question.getAnswers()[0];
 	}
+	
+	private void SendQuestion(Question question, MessageChannel channel, MessageReceivedEvent event) {
+		Color color = new Color(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
+
+		MessageEmbed embedded = new EmbedBuilder()
+			.setAuthor(event.getAuthor().getName() + "'s quiz question", null, event.getAuthor().getAvatarUrl())
+			.setColor(color)
+			.setDescription(question.getQuestion())
+			.addField("Category", "World of Warcraft", true)
+			.addField("Points", question.getPoints(), true)
+			.setFooter("You have all the time to answer.")
+			.build();
+		
+		lastQuestion = question;
+		channel.sendMessage(embedded).queue();
+	}
 
 	@Override
 	public void HandleMessage(String userTag, String message, MessageChannel channel, String userMention, MessageReceivedEvent event) {
 		if (message.toLowerCase().equals("dum quiz")) {
 			Question question = GetQuestion(userTag);
-			Color color = new Color(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
-
-			MessageEmbed embedded = new EmbedBuilder()
-				.setAuthor(event.getAuthor().getName() + "'s quiz question", null, event.getAuthor().getAvatarUrl())
-				.setColor(color)
-				.setDescription(question.getQuestion())
-				.addField("Category", "World of Warcraft", true)
-				.addField("Points", question.getPoints(), true)
-				.setFooter("You have all the time to answer.")
-				.build();
-			
-			channel.sendMessage(embedded).queue();
+			SendQuestion(question, channel, event);
 		} 
+		else if (message.toLowerCase().equals("dum quiz last")) {
+			SendQuestion(lastQuestion, channel, event);
+		}
 		else if (IsPending(userTag) ) {
 			String response = AnswerQuestion(userTag, message); 
 			channel.sendMessage(userMention + " " + response).queue();
