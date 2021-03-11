@@ -88,7 +88,7 @@ public class Quiz implements IFunService {
 			return "";    
 
 		Question question = users.get(userID);
-		List<String> userWords = (String[]) Arrays.asList(answer.split(" ")).stream()
+		List<String> userWords = Arrays.asList(answer.split(" ")).stream()
 				.map(s -> s.toLowerCase())
 				.filter(w -> !whitelistedWords.contains(w))
 				.collect(Collectors.toList());
