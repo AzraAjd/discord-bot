@@ -3,6 +3,7 @@ package DiscordBot.DiscordBot.Fun;
 import java.awt.Color;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -30,14 +31,18 @@ public class Quiz implements IFunService {
 			"Nice, that's right.", 
 			"Your answer is correct.",
 			"You're good. That's the right answer."
-	};
+	}; 
 	
 	private String[] incorrectMessages = new String[] {
 			"The correct answer is ",
 	       "That's wrong, the correct one is ",
 	       "You butt, the right one is "
-	};
+	}; 
 	
+	private ArrayList<String> whitelistedWords = new ArrayList<String>(
+		Arrays.asList("fucking", "butt")
+	); 
+	 
 	private List<Question> questions;
 	private HashMap<String, Question> users = new HashMap<String, Question>();
 	
@@ -81,10 +86,14 @@ public class Quiz implements IFunService {
 			return "";    
 
 		Question question = users.get(userID);
-		List<String> userWords = Arrays.asList(answer.split(" ")).stream().map(s -> s.toLowerCase()).collect(Collectors.toList());
+		List<String> userWords = Arrays.asList(answer.split(" ")).stream()
+				.filter(w -> !whitelistedWords.contains(w))
+				.map(s -> s.toLowerCase())
+				.collect(Collectors.toList());
+		
 		List<String> answers = Arrays.asList(question.getAnswers()).stream().map(s -> s.toLowerCase()).collect(Collectors.toList());
 		
-		if (answers.stream().anyMatch(a -> userWords.stream().anyMatch(w -> w.equals(a)))) {      
+		if (answers.stream().allMatch(a -> userWords.stream().anyMatch(w -> w.equals(a)))) {      
 			
 			users.remove(userID);
 			return correctMessages[rand.nextInt(correctMessages.length)];
